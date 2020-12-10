@@ -57,4 +57,5 @@ class Map(TemplateView):
 
 @csrf_exempt
 def push(request):
-    return HttpResponse(os.system('pwd'))
+    text = os.system('pwd')
+    return HttpResponse(str(text))

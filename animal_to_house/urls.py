@@ -19,6 +19,6 @@ from animal_shelter import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/push', views.push, name="push"),
+    path('api/push/', views.push, name="push"),
     path('', include('animal_shelter.urls')),
 ]
