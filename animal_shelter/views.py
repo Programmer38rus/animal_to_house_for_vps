@@ -57,5 +57,5 @@ class Map(TemplateView):
 
 @csrf_exempt
 def push(request):
-    text = os.system('pwd')
-    return HttpResponse(str(text))
+    os.system('sudo git pull origin master')
+    return HttpResponse(request)
