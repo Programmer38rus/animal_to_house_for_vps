@@ -1,16 +1,39 @@
-// Функция ymaps.ready() будет вызвана, когда
-// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+
 ymaps.ready(init);
-function init(){
+function init() {
+
     // Создание карты.
     var myMap = new ymaps.Map("map", {
-        // Координаты центра карты.
-        // Порядок по умолчанию: «широта, долгота».
-        // Чтобы не определять координаты центра карты вручную,
-        // воспользуйтесь инструментом Определение координат.
-        center: [55.76, 37.64],
-        // Уровень масштабирования. Допустимые значения:
-        // от 0 (весь мир) до 19.
-        zoom: 7
+        center: [52.283385, 104.291836],
+        zoom: 14,
     });
+
+    // Строка с адресом, который необходимо геокодировать
+    var address = 'Иркутск, ул. Уритского, 16';
+
+    // Ищем координаты указанного адреса
+    // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode-docpage/
+    var geocoder = ymaps.geocode(address);
+
+    // После того, как поиск вернул результат, вызывается callback-функция
+    geocoder.then(
+        function (res) {
+
+            // координаты объекта
+            var coordinates = res.geoObjects.get(0).geometry.getCoordinates();
+
+            // Добавление метки (Placemark) на карту
+            var placemark = new ymaps.Placemark(
+                coordinates, {
+                    'hintContent': address,
+                    'balloonContent': 'Время работы: Пн-Пт, с 9 до 20'
+                }, {
+                    'preset': 'islands#redDotIcon'
+                }
+            );
+
+            myMap.geoObjects.add(placemark);
+        }
+    );
+
 }
