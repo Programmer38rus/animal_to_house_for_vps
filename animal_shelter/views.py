@@ -51,13 +51,16 @@ class PetsDetailView(DetailView):
 
 class AboutUs(TemplateView):
     template_name = 'about.html'
-    def get_context_data(self, **kwargs):
-        contex = super().get_context_data(**kwargs)
-        context['map'] = True
-        return  contex
 
 class Map(TemplateView):
     template_name = 'map.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['map'] = True
+        return context
+
+
 @csrf_exempt
 def push(request):
     os.system('sudo git pull origin master && sudo systemctl restart gunicorn')
