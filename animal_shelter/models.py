@@ -6,6 +6,10 @@ from datetime import datetime
 class Kind(models.Model):
     name = models.CharField(max_length=50, verbose_name="Вид", null=True, blank=True)
 
+    class Meta:
+        verbose_name = "Вид"
+        verbose_name_plural = "Добавить вид"
+
     def __str__(self):
         return self.name
 
