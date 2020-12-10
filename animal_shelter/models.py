@@ -25,6 +25,10 @@ class Pet(models.Model):
 
     kind = models.ForeignKey(Kind, on_delete=models.CASCADE, null=True, blank=True, verbose_name="Вид")
 
+    class Meta:
+        verbose_name = "Животное"
+        verbose_name_plural = "Добавить животное"
+
     @property
     def age(self):
         age = int((datetime.now().date() - self.birth_data).days / 31)
