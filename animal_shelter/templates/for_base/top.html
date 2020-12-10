@@ -37,17 +37,20 @@
     </div>
     <a class="navbar-brand font-weight-bold" href="/">Animal to House</a>
 </nav>
-{% block map %} {% endblock %}
-<div class="container wrapper">
-    <div class="container mt-3">
-{#        <p><b>Фильтры</b></p>#}
-{#        {% for k in kind %}#}
-{#            <a href="{% url 'animal_shelter:finder_by_kind' k.name %}"><div class="badge badge-primary">{{ k }}</div></a>#}
-{#        {% endfor %}#}
-        {% block finder_by_kind %} {% endblock %}
+{% if map %}
+    {% block map %} {% endblock %}
+{% else %}
+    <div class="container wrapper">
+        <div class="container mt-3">
+    {#        <p><b>Фильтры</b></p>#}
+    {#        {% for k in kind %}#}
+    {#            <a href="{% url 'animal_shelter:finder_by_kind' k.name %}"><div class="badge badge-primary">{{ k }}</div></a>#}
+    {#        {% endfor %}#}
+            {% block finder_by_kind %} {% endblock %}
+        </div>
+        {% block contant %} {% endblock %}
     </div>
-    {% block contant %} {% endblock %}
-</div>
+{% endif %}
 <footer class="page-footer font-small  fixed-bottom">
     <div class="footer-block">
         <div class="container-fluid footer-copyright row py-3">
