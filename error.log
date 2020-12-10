@@ -1,0 +1,78 @@
+[2020-12-09 14:52:12 +0000] [17208] [INFO] Starting gunicorn 20.0.4
+[2020-12-09 14:52:12 +0000] [17208] [INFO] Listening at: unix:/var/www/animal_to_house.sock (17208)
+[2020-12-09 14:52:12 +0000] [17208] [INFO] Using worker: sync
+[2020-12-09 14:52:12 +0000] [17209] [INFO] Booting worker with pid: 17209
+[2020-12-09 14:52:12 +0000] [17210] [INFO] Booting worker with pid: 17210
+[2020-12-09 14:52:12 +0000] [17211] [INFO] Booting worker with pid: 17211
+[2020-12-09 15:08:19 +0000] [17209] [INFO] Worker exiting (pid: 17209)
+[2020-12-09 15:08:19 +0000] [17210] [INFO] Worker exiting (pid: 17210)
+[2020-12-09 15:08:19 +0000] [17211] [INFO] Worker exiting (pid: 17211)
+[2020-12-09 15:08:19 +0000] [17208] [INFO] Handling signal: term
+[2020-12-09 15:08:19 +0000] [17208] [INFO] Shutting down: Master
+[2020-12-09 15:08:35 +0000] [17447] [INFO] Starting gunicorn 20.0.4
+[2020-12-09 15:08:35 +0000] [17447] [INFO] Listening at: unix:/var/www/animal_to_house/animal_to_house.sock (17447)
+[2020-12-09 15:08:35 +0000] [17447] [INFO] Using worker: sync
+[2020-12-09 15:08:35 +0000] [17448] [INFO] Booting worker with pid: 17448
+[2020-12-09 15:08:35 +0000] [17449] [INFO] Booting worker with pid: 17449
+[2020-12-09 15:08:35 +0000] [17450] [INFO] Booting worker with pid: 17450
+[2020-12-09 15:44:45 +0000] [283] [INFO] Starting gunicorn 20.0.4
+[2020-12-09 15:44:45 +0000] [283] [INFO] Listening at: unix:/var/www/animal_to_house/animal_to_house.sock (283)
+[2020-12-09 15:44:45 +0000] [283] [INFO] Using worker: sync
+[2020-12-09 15:44:45 +0000] [310] [INFO] Booting worker with pid: 310
+[2020-12-09 15:44:45 +0000] [311] [INFO] Booting worker with pid: 311
+[2020-12-09 15:44:45 +0000] [312] [INFO] Booting worker with pid: 312
+[2020-12-09 16:05:08 +0000] [283] [INFO] Handling signal: term
+[2020-12-09 16:05:08 +0000] [311] [INFO] Worker exiting (pid: 311)
+[2020-12-09 16:05:08 +0000] [312] [INFO] Worker exiting (pid: 312)
+[2020-12-09 16:05:08 +0000] [310] [INFO] Worker exiting (pid: 310)
+[2020-12-09 16:05:08 +0000] [283] [INFO] Shutting down: Master
+[2020-12-09 16:05:09 +0000] [608] [INFO] Starting gunicorn 20.0.4
+[2020-12-09 16:05:09 +0000] [608] [INFO] Listening at: unix:/var/www/animal_to_house/animal_to_house.sock (608)
+[2020-12-09 16:05:09 +0000] [608] [INFO] Using worker: sync
+[2020-12-09 16:05:09 +0000] [609] [INFO] Booting worker with pid: 609
+[2020-12-09 16:05:09 +0000] [610] [INFO] Booting worker with pid: 610
+[2020-12-09 16:05:09 +0000] [611] [INFO] Booting worker with pid: 611
+[2020-12-09 16:13:04 +0000] [609] [INFO] Worker exiting (pid: 609)
+[2020-12-09 16:13:04 +0000] [610] [INFO] Worker exiting (pid: 610)
+[2020-12-09 16:13:04 +0000] [611] [INFO] Worker exiting (pid: 611)
+[2020-12-09 16:13:04 +0000] [608] [INFO] Handling signal: term
+[2020-12-09 16:13:04 +0000] [608] [INFO] Shutting down: Master
+[2020-12-09 16:13:04 +0000] [718] [INFO] Starting gunicorn 20.0.4
+[2020-12-09 16:13:04 +0000] [718] [INFO] Listening at: unix:/var/www/animal_to_house/animal_to_house.sock (718)
+[2020-12-09 16:13:04 +0000] [718] [INFO] Using worker: sync
+[2020-12-09 16:13:04 +0000] [721] [INFO] Booting worker with pid: 721
+[2020-12-09 16:13:04 +0000] [722] [INFO] Booting worker with pid: 722
+[2020-12-09 16:13:05 +0000] [723] [INFO] Booting worker with pid: 723
+[2020-12-09 23:00:41 +0000] [721] [INFO] Worker exiting (pid: 721)
+[2020-12-09 23:00:41 +0000] [722] [INFO] Worker exiting (pid: 722)
+[2020-12-09 23:00:41 +0000] [723] [INFO] Worker exiting (pid: 723)
+[2020-12-09 23:00:41 +0000] [718] [INFO] Handling signal: term
+[2020-12-09 23:00:41 +0000] [718] [INFO] Shutting down: Master
+[2020-12-09 23:00:41 +0000] [4616] [INFO] Starting gunicorn 20.0.4
+[2020-12-09 23:00:41 +0000] [4616] [INFO] Listening at: unix:/var/www/animal_to_house/animal_to_house.sock (4616)
+[2020-12-09 23:00:41 +0000] [4616] [INFO] Using worker: sync
+[2020-12-09 23:00:41 +0000] [4617] [INFO] Booting worker with pid: 4617
+[2020-12-09 23:00:41 +0000] [4618] [INFO] Booting worker with pid: 4618
+[2020-12-09 23:00:42 +0000] [4619] [INFO] Booting worker with pid: 4619
+[2020-12-09 23:22:19 +0000] [4617] [INFO] Worker exiting (pid: 4617)
+[2020-12-09 23:22:19 +0000] [4616] [INFO] Handling signal: term
+[2020-12-09 23:22:19 +0000] [4619] [INFO] Worker exiting (pid: 4619)
+[2020-12-09 23:22:19 +0000] [4618] [INFO] Worker exiting (pid: 4618)
+[2020-12-09 23:22:19 +0000] [4616] [INFO] Shutting down: Master
+[2020-12-09 23:22:19 +0000] [4986] [INFO] Starting gunicorn 20.0.4
+[2020-12-09 23:22:19 +0000] [4986] [INFO] Listening at: unix:/var/www/animal_to_house/animal_to_house.sock (4986)
+[2020-12-09 23:22:19 +0000] [4986] [INFO] Using worker: sync
+[2020-12-09 23:22:19 +0000] [4987] [INFO] Booting worker with pid: 4987
+[2020-12-09 23:22:19 +0000] [4988] [INFO] Booting worker with pid: 4988
+[2020-12-09 23:22:19 +0000] [4989] [INFO] Booting worker with pid: 4989
+[2020-12-09 23:27:28 +0000] [4988] [INFO] Worker exiting (pid: 4988)
+[2020-12-09 23:27:28 +0000] [4987] [INFO] Worker exiting (pid: 4987)
+[2020-12-09 23:27:28 +0000] [4989] [INFO] Worker exiting (pid: 4989)
+[2020-12-09 23:27:28 +0000] [4986] [INFO] Handling signal: term
+[2020-12-09 23:27:28 +0000] [4986] [INFO] Shutting down: Master
+[2020-12-09 23:27:28 +0000] [5108] [INFO] Starting gunicorn 20.0.4
+[2020-12-09 23:27:28 +0000] [5108] [INFO] Listening at: unix:/var/www/animal_to_house/animal_to_house.sock (5108)
+[2020-12-09 23:27:28 +0000] [5108] [INFO] Using worker: sync
+[2020-12-09 23:27:28 +0000] [5111] [INFO] Booting worker with pid: 5111
+[2020-12-09 23:27:28 +0000] [5112] [INFO] Booting worker with pid: 5112
+[2020-12-09 23:27:28 +0000] [5113] [INFO] Booting worker with pid: 5113

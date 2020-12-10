@@ -1,0 +1,38 @@
+{% extends 'for_base/top.html' %}
+{% block title %}{{ object.name }}{% endblock %}
+{% block finder_by_kind %}
+    <p><b>Фильтры</b></p>
+    {% for k in kind %}
+        <a href="{% url 'animal_shelter:finder_by_kind' k.name %}"><div class="badge badge-primary">{{ k }}</div></a>
+    {% endfor %}
+{% endblock %}
+{% block contant %}
+       <div class=" mt-5 jumbotron">
+
+            <div class="row">
+                <div class="w-50">
+                    <img class="w-100" src="{{ media }}{{ object.face }}" alt="">
+                </div>
+                <div class="ml-4 flex-column right-block">
+                    <div>
+                        <div class="d-flex">
+                            <span>Кличка: &nbsp</span><p>{{ object.name }}</p>
+                        </div>
+                        <div class="d-flex">
+                            <span>Возраст: &nbsp</span><p>{{ object.age }}</p>
+                        </div>
+                        <div class="d-flex">
+                            <span>Пол: &nbsp</span><p>{{ object.gender }}</p>
+                        </div>
+                        <div class="description">
+                            <span style="font-weight: bold">Обо мне:</span>
+                            <p>{{ object.description }}</p>
+                        </div>
+                        <div class="d-flex">
+                            <button class="btn btn-success">Забрать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+{% endblock %}
