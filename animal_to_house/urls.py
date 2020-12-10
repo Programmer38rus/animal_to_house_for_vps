@@ -17,10 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from animal_shelter import views
 
-app_name = 'admin'
 
 urlpatterns = [
-    path('admin/', admin.site.urls, name='nimda'),
+    path('admin/', admin.site.urls),
     path('api/push/', views.push, name="push"),
     path('', include('animal_shelter.urls')),
 ]
