@@ -58,4 +58,4 @@ class Map(TemplateView):
 @csrf_exempt
 def push(request):
     os.system('sudo git pull origin master')
-    return HttpResponse(request)
+    return HttpResponse(f"{request} - это ответ")
