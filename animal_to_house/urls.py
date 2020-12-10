@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from animal_shelter import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/push', views.push, name="push"),
     path('', include('animal_shelter.urls')),
 ]

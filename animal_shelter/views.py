@@ -1,10 +1,13 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from .models import Pet, Kind
 from django.views.generic import (
     ListView,
     DetailView,
     TemplateView,
 )
+import os
 
 
 # Create your views here.
@@ -51,3 +54,7 @@ class AboutUs(TemplateView):
 
 class Map(TemplateView):
     template_name = 'map.html'
+
+@csrf_exempt
+def push(request):
+    return HttpResponse(os.system('pwd'))
