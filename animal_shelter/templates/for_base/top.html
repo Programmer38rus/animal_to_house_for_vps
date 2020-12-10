@@ -37,9 +37,9 @@
     </div>
     <a class="navbar-brand font-weight-bold" href="/">Animal to House</a>
 </nav>
-{% if map %}
+{#{% if map %}#}
     {% block map %} {% endblock %}
-{% else %}
+{#{% else %}#}
     <div class="container wrapper">
         <div class="container mt-3">
     {#        <p><b>Фильтры</b></p>#}
@@ -50,7 +50,7 @@
         </div>
         {% block contant %} {% endblock %}
     </div>
-{% endif %}
+{#{% endif %}#}
 <footer class="page-footer font-small  fixed-bottom">
     <div class="footer-block">
         <div class="container-fluid footer-copyright row py-3">
