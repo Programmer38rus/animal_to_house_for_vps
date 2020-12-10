@@ -20,7 +20,7 @@ from animal_shelter import views
 app_name = 'admin'
 
 urlpatterns = [
-    path('admin/', admin.site.urls, name='admin'),
+    path('admin/', admin.site.urls, name='nimda'),
     path('api/push/', views.push, name="push"),
     path('', include('animal_shelter.urls')),
 ]

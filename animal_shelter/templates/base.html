@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}Приют для животных{% endblock %}
 {% block finder_by_kind %}
-    <a href="{% url 'admin:admin' %}"><button class="btn btn-dark">Добавить животное</button></a>
+    <a href="{% url 'nimda' %}"><button class="btn btn-dark">Добавить животное</button></a>
     <p><b>Фильтры</b></p>
     {% for k in kind %}
         <a href="{% url 'animal_shelter:finder_by_kind' k.name %}"><div class="badge badge-primary">{{ k }}</div></a>
