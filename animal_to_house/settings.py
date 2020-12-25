@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'c*%hdd5r0!ch3cn38s1&1-7s3u=u84+*(hv3s6&5z(7r^&oz21'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['188.93.211.174', 'www.slavakorotkin.ru', 'first.slavakorotkin.ru', 'slavakorotkin.ru']
 
