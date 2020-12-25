@@ -13,7 +13,7 @@ import os
 
 class PetsList(ListView):
     model = Pet
-    template_name = 'base.html'
+    template_name = 'animal_shelter/index.html'
 
     # context_object_name = 'Pets'
 
@@ -40,12 +40,12 @@ def index(request):
         'kind': cache.get('kind'),
         'Pets': cache.get('Pets')
     }
-    return render(request, 'base.html', context)
+    return render(request, 'animal_shelter/index.html', context)
 
 
 class KindList(ListView):
     model = Pet
-    template_name = 'base.html'
+    template_name = 'animal_shelter/index.html'
 
     def get_context_data(self, **kwargs):
         pets = super().get_context_data(**kwargs)
@@ -78,12 +78,12 @@ def kind_list(request, **kwargs):
         'kind': cache.get('kind'),
         'Pets': cache.get('Pets').filter(kind=kind['id'])
     }
-    return render(request, 'base.html', context)
+    return render(request, 'animal_shelter/index.html', context)
 
 
 class PetsDetailView(DetailView):
     model = Pet
-    template_name = 'base2.html'
+    template_name = 'animal_shelter/details.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -109,15 +109,15 @@ def pet_detail(request, **kwargs):
         'object': object,
     }
 
-    return render(request, 'base2.html', context)
+    return render(request, 'animal_shelter/details.html', context)
 
 
 class AboutUs(TemplateView):
-    template_name = 'about.html'
+    template_name = 'animal_shelter/about.html'
 
 
 class Map(TemplateView):
-    template_name = 'map.html'
+    template_name = 'animal_shelter/map.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
