@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'c*%hdd5r0!ch3cn38s1&1-7s3u=u84+*(hv3s6&5z(7r^&oz21'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True
 
 ALLOWED_HOSTS = ['188.93.211.174', 'www.slavakorotkin.ru', 'first.slavakorotkin.ru', 'slavakorotkin.ru']
 
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'animal_shelter',
+    'animal_shelter.apps.AnimalShelterConfig',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +120,16 @@ DEFAULT_CHARSET = 'utf-8'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'TIMEOUT': 60 * 5,
+        'LOCATION': 'unix:/tmp/memcached.sock',
+        # 'LOCATION': '/tmp/memcached.sock',
+        # 'LOCATION': '127.0.0.1:11211',
+    }
+}
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')

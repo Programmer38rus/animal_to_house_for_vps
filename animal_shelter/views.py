@@ -7,21 +7,41 @@ from django.views.generic import (
     DetailView,
     TemplateView,
 )
+from django.core.cache import cache
 import os
 
 
-# Create your views here.
 class PetsList(ListView):
     model = Pet
     template_name = 'base.html'
-    context_object_name = 'Pets'
+
+    # context_object_name = 'Pets'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         pets = super(PetsList, self).get_context_data(**kwargs)
 
-        pets['kind'] = Kind.objects.all()
+        if cache.get('kind') is None:
+            cache.set('kind', Kind.objects.all())
+
+        pets['kind'] = cache.get('kind')
 
         return pets
+
+
+# / показывает всех животных на главной странице
+def index(request):
+    if not cache.get('Pets'):
+        cache.set('Pets', Pet.objects.all().select_related())
+
+    if cache.get('kind') is None:
+        cache.set('kind', Kind.objects.all().select_related())
+
+    context = {
+        'kind': cache.get('kind'),
+        'Pets': cache.get('Pets')
+    }
+    return render(request, 'base.html', context)
+
 
 class KindList(ListView):
     model = Pet
@@ -36,8 +56,29 @@ class KindList(ListView):
         for id in kind:
             pets['Pets'] = Pet.objects.filter(kind=id['id'])
 
-        pets['kind'] = Kind.objects.all()
+        if cache.get('kind') is None:
+            cache.set('kind', Kind.objects.all())
+
+        # pets['kind'] = Kind.objects.all()
+        pets['kind'] = cache.get('kind')
         return pets
+
+
+def kind_list(request, **kwargs):
+    if not cache.get('Pets'):
+        cache.set('Pets', Pet.objects.all().select_related())
+
+    if cache.get('kind') is None:
+        cache.set('kind', Kind.objects.all().select_related())
+
+    name_kind = kwargs['kind'].title()
+    kind = cache.get('kind').filter(name=name_kind).values()[0]
+
+    context = {
+        'kind': cache.get('kind'),
+        'Pets': cache.get('Pets').filter(kind=kind['id'])
+    }
+    return render(request, 'base.html', context)
 
 
 class PetsDetailView(DetailView):
@@ -46,11 +87,34 @@ class PetsDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['kind'] = Kind.objects.all()
+
+        if cache.get('kind') is None:
+            cache.set('kind', Kind.objects.all())
+
+        context['kind'] = cache.get('kind')
         return context
+
+
+def pet_detail(request, **kwargs):
+    if not cache.get('Pets'):
+        cache.set('Pets', Pet.objects.all().select_related())
+
+    if cache.get('kind') is None:
+        cache.set('kind', Kind.objects.all().select_related())
+
+    object = cache.get('Pets').filter(id=kwargs['pk']).first()
+
+    context = {
+        'kind': cache.get('kind'),
+        'object': object,
+    }
+
+    return render(request, 'base2.html', context)
+
 
 class AboutUs(TemplateView):
     template_name = 'about.html'
+
 
 class Map(TemplateView):
     template_name = 'map.html'
