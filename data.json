@@ -1,0 +1,135 @@
+[
+{
+  "model": "animal_shelter.kind",
+  "pk": 1,
+  "fields": {
+    "name": "Cat"
+  }
+},
+{
+  "model": "animal_shelter.kind",
+  "pk": 2,
+  "fields": {
+    "name": "Dog"
+  }
+},
+{
+  "model": "animal_shelter.kind",
+  "pk": 3,
+  "fields": {
+    "name": "Parrot"
+  }
+},
+{
+  "model": "animal_shelter.kind",
+  "pk": 4,
+  "fields": {
+    "name": "Медведь"
+  }
+},
+{
+  "model": "animal_shelter.kind",
+  "pk": 5,
+  "fields": {
+    "name": "Павлин"
+  }
+},
+{
+  "model": "animal_shelter.kind",
+  "pk": 6,
+  "fields": {
+    "name": "Слон"
+  }
+},
+{
+  "model": "animal_shelter.pet",
+  "pk": 1,
+  "fields": {
+    "name": "Джо",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "receipt_date": "2020-10-29",
+    "face": "pets_foto/595686168.m_4eZu2yg.jpeg",
+    "birth_data": "2017-12-01",
+    "gender": "Мальчик",
+    "kind": 2
+  }
+},
+{
+  "model": "animal_shelter.pet",
+  "pk": 2,
+  "fields": {
+    "name": "Пепе",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "receipt_date": "2020-10-29",
+    "face": "pets_foto/Dog_3_BClPUxq.jpg",
+    "birth_data": "2020-09-01",
+    "gender": "Мальчик",
+    "kind": 2
+  }
+},
+{
+  "model": "animal_shelter.pet",
+  "pk": 3,
+  "fields": {
+    "name": "Кэти",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "receipt_date": "2020-12-23",
+    "face": "pets_foto/Cat_2_4QaRkcJ.jpg",
+    "birth_data": "2018-12-18",
+    "gender": "Мальчик",
+    "kind": 1
+  }
+},
+{
+  "model": "animal_shelter.pet",
+  "pk": 4,
+  "fields": {
+    "name": "Кока",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "receipt_date": "2020-10-29",
+    "face": "pets_foto/Cat_1_hpv788U.jpg",
+    "birth_data": "2020-07-01",
+    "gender": "Мальчик",
+    "kind": 1
+  }
+},
+{
+  "model": "animal_shelter.pet",
+  "pk": 5,
+  "fields": {
+    "name": "Кеша",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "receipt_date": "2020-12-23",
+    "face": "pets_foto/unnamed.png",
+    "birth_data": "2015-03-06",
+    "gender": "Мальчик",
+    "kind": 3
+  }
+},
+{
+  "model": "animal_shelter.pet",
+  "pk": 6,
+  "fields": {
+    "name": "Петрушка",
+    "description": "Просто зверь!",
+    "receipt_date": "2020-12-25",
+    "face": "pets_foto/9068.jpg_wh300.jpg",
+    "birth_data": "2020-09-01",
+    "gender": "Мальчик",
+    "kind": 5
+  }
+},
+{
+  "model": "animal_shelter.pet",
+  "pk": 7,
+  "fields": {
+    "name": "Ушастик",
+    "description": "Огромный как слон!",
+    "receipt_date": "2020-12-25",
+    "face": "pets_foto/unnamed.jpg",
+    "birth_data": "2000-12-03",
+    "gender": "Мальчик",
+    "kind": 6
+  }
+}
+]

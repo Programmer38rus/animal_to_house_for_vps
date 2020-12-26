@@ -21,12 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c*%hdd5r0!ch3cn38s1&1-7s3u=u84+*(hv3s6&5z(7r^&oz21'
+# SECRET_KEY = 'c*%hdd5r0!ch3cn38s1&1-7s3u=u84+*(hv3s6&5z(7r^&oz21'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['188.93.211.174', 'www.slavakorotkin.ru', 'first.slavakorotkin.ru', 'slavakorotkin.ru']
+ALLOWED_HOSTS = ['188.93.211.174', 'www.slavakorotkin.ru', 'first.slavakorotkin.ru', 'slavakorotkin.ru', '*']
 
 
 # Application definition
@@ -76,13 +77,23 @@ WSGI_APPLICATION = 'animal_to_house.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR / 'db.sqlite'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR / 'db.sqlite'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB'),
+        'USER': os.environ.get('USERNAME'),
+        'PASSWORD': os.environ.get('PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
