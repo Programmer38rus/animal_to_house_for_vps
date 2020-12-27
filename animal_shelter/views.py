@@ -30,6 +30,7 @@ class PetsList(ListView):
 
 # / показывает всех животных на главной странице
 def index(request):
+    print(Pet.objects.all())
     if not cache.get('Pets'):
         cache.set('Pets', Pet.objects.all())
 
