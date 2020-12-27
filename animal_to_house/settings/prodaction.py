@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['188.93.211.174', 'localhost', '0.0.0.0', 'www.slavakorotkin.ru', 'first.slavakorotkin.ru', 'slavakorotkin.ru', '*']
+ALLOWED_HOSTS = ['188.93.211.174', 'localhost', '0.0.0.0', '127.0.0.1', 'www.slavakorotkin.ru', 'first.slavakorotkin.ru', 'slavakorotkin.ru', '*']
 
 
 # Application definition
