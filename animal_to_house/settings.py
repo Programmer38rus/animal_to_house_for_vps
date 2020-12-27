@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['188.93.211.174', 'www.slavakorotkin.ru', 'first.slavakorotkin.ru', 'slavakorotkin.ru', '*']
+ALLOWED_HOSTS = ['188.93.211.174', 'localhost', 'www.slavakorotkin.ru', 'first.slavakorotkin.ru', 'slavakorotkin.ru', '*']
 
 
 # Application definition
@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': os.environ.get('DB'),
         'USER': os.environ.get('USERNAME'),
         'PASSWORD': os.environ.get('PASSWORD'),
-        'HOST': '0.0.0.0',
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }
