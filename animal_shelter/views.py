@@ -30,20 +30,17 @@ class PetsList(ListView):
 
 # / показывает всех животных на главной странице
 def index(request):
-    # if not cache.get('Pets'):
-    #     cache.set('Pets', Pet.objects.all())
-    #
-    # if cache.get('kind') is None:
-    #     cache.set('kind', Kind.objects.all())
+    if not cache.get('Pets'):
+        cache.set('Pets', Pet.objects.all())
 
-    # context = {
-    #     'kind': cache.get('kind'),
-    #     'Pets': cache.get('Pets')
-    # }
+    if cache.get('kind') is None:
+        cache.set('kind', Kind.objects.all())
+
     context = {
-        'kind': Kind.objects.all(),
-        'Pets': Pet.objects.all()
+        'kind': cache.get('kind'),
+        'Pets': cache.get('Pets')
     }
+
     return render(request, 'animal_shelter/index.html', context)
 
 
