@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'animal_to_house.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
