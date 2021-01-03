@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': os.environ.get('DB'),
         'USER': os.environ.get('USERNAME'),
         'PASSWORD': os.environ.get('PASSWORD'),
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
