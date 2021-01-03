@@ -129,5 +129,5 @@ class Map(TemplateView):
 
 @csrf_exempt
 def push(request):
-    os.system('git pull origin master && systemctl restart gunicorn')
+    os.system('git pull origin master && sudo systemctl restart gunicorn')
     return HttpResponse(f"{request} - это ответ")
