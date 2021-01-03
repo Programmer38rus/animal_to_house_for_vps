@@ -131,4 +131,5 @@ class Map(TemplateView):
 def push(request):
     os.system('git pull origin master')
     os.system('sudo systemctl restart gunicorn')
+
     return HttpResponse(f"{request} - это ответ")
