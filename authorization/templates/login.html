@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Авторизация {% endblock %}
+{% block authorization %}
+    <div class="title-line">
+        <div class="span">
+            <span class="span-line">АВТОРИЗАЦИЯ</span>
+        </div>
+    </div>
+    <div class="auth">
+        <div class="auth-left">
+            <h5 class="top-h5">Авторизация на сайте</h5>
+            <form action="" method="post" class="d-flex flex-column align-items-center list-unstyled ">
+                {% csrf_token %}
+                <input class=" w-100 mb-2" required name="username" placeholder="Имя пользователя"></input>
+                <input class=" w-100 mb-3" type="password" name="password" required placeholder="Пароль"></input>
+                <input class="btn btn-success w-100" type="submit" value="Войти">
+            </form>
+            {{ message }}
+        </div>
+        <div class="auth-right">
+            <h5 class="top-h5 mb-5">Регистрация на сайте</h5>
+            <ul>
+                <li class="mb-2">Вы сможете доваблять и редактировать питомцев</li>
+                <li class="mb-5">Вы получите доступ к личному кабинету</li>
+            </ul>
+            <a href="{% url 'authorization:registration' %}" class="w-100 btn btn-danger">Зарегистрироваться</a>
+        </div>
+    </div>
+{% endblock %}
