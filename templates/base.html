@@ -8,7 +8,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=b82f41de-e8e7-4651-8afb-60de25a3e9d9&lang=ru_RU" type="text/javascript">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=b82f41de-e8e7-4651-8afb-60de25a3e9d9&lang=ru_RU"
+            type="text/javascript">
     </script>
 </head>
 <body class="bg-light">
@@ -35,13 +36,27 @@
         <a class="text-white nav-item nav-link" href="/about">О нас</a>
         <a class="text-white nav-item nav-link" href="{% url 'animal_shelter:map' %}">Мы на карте</a>
     </div>
-    <a class="navbar-brand font-weight-bold" href="/">Animal to House</a>
+    <div class="navbar">
+        <div class="d-flex justify-content-center align-items-center me-3">
+            {% if username %}
+                {{ username }}
+            {% else %}
+                <a href="{% url 'authorization:login' %}" class="text-light text-dark nav-item nav-link">вход</a>
+                |
+                <a href="" class="text-dark nav-item nav-link">регистрация</a>
+            {% endif %}
+        </div>
+        <div>
+            <a class="navbar-brand font-weight-bold" href="/">Animal to House</a>
+        </div>
+    </div>
 </nav>
 {% if map %}
     {% block map %} {% endblock %}
 {% else %}
     <div class="container wrapper">
         <div class="container mt-3">
+            {% block authorization %} {% endblock %}
             {% block finder_by_kind %} {% endblock %}
         </div>
         {% block contant %} {% endblock %}
@@ -50,32 +65,33 @@
 <footer class="page-footer font-small  fixed-bottom">
     <div class="footer-block">
         <div class="container-fluid footer-copyright row py-3">
-                <div class="col-10">
-                    <ul>
-                        <li class="list-unstyled">
-                            <a class="text-white" href="mailto:animal@tohome.ru?subject=Хочу друга!">электронная почта</a>
-                        </li>
-                        <li class="list-unstyled">
-                            <p class="text-white">телефон: 35-35-35</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-2 d-flex justify-content-end justify-content-around">
-                    <a class="google text-white" href="https://github.com/Programmer38rus/animal_to_house">
-                        <img src="{% static 'icons/github.svg' %}">
-                    </a>
-                    <a class="google text-white" href="#">
-                        <img src="{% static 'icons/facebook.svg' %}">
-                    </a>
-                    <a class="google text-white" href="#">
-                        <img src="{% static 'icons/vk.svg' %}">
-                    </a>
-                </div>
+            <div class="col-10">
+                <ul>
+                    <li class="list-unstyled">
+                        <a class="text-white" href="mailto:animal@tohome.ru?subject=Хочу друга!">электронная почта</a>
+                    </li>
+                    <li class="list-unstyled">
+                        <p class="text-white">телефон: 35-35-35</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-2 d-flex justify-content-end justify-content-around">
+                <a class="google text-white" href="https://github.com/Programmer38rus/animal_to_house">
+                    <img src="{% static 'icons/github.svg' %}">
+                </a>
+                <a class="google text-white" href="#">
+                    <img src="{% static 'icons/facebook.svg' %}">
+                </a>
+                <a class="google text-white" href="#">
+                    <img src="{% static 'icons/vk.svg' %}">
+                </a>
+            </div>
         </div>
     </div>
 </footer>
 <script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

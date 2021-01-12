@@ -1,3 +1,5 @@
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -9,6 +11,7 @@ from django.views.generic import (
 )
 from django.core.cache import cache
 import os
+from django.contrib.auth import authenticate, login
 
 
 class PetsList(ListView):
@@ -30,7 +33,6 @@ class PetsList(ListView):
 
 # / показывает всех животных на главной странице
 def index(request):
-    print(Pet.objects.all())
     if not cache.get('Pets'):
         cache.set('Pets', Pet.objects.all())
 
@@ -39,8 +41,11 @@ def index(request):
 
     context = {
         'kind': cache.get('kind'),
-        'Pets': cache.get('Pets')
+        'Pets': cache.get('Pets'),
     }
+
+    if request.user.is_authenticated:
+        context['username'] = request.user.username
 
     return render(request, 'animal_shelter/index.html', context)
 
@@ -80,6 +85,10 @@ def kind_list(request, **kwargs):
         'kind': cache.get('kind'),
         'Pets': cache.get('Pets').filter(kind=kind['id'])
     }
+
+    if request.user.is_authenticated:
+        context['username'] = request.user.username
+
     return render(request, 'animal_shelter/index.html', context)
 
 
@@ -111,20 +120,36 @@ def pet_detail(request, **kwargs):
         'object': object,
     }
 
+    if request.user.is_authenticated:
+        context['username'] = request.user.username
+
     return render(request, 'animal_shelter/details.html', context)
 
 
 class AboutUs(TemplateView):
     template_name = 'animal_shelter/about.html'
 
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
+        context['map'] = True
+
+        if request.user.is_authenticated:
+            context['username'] = request.user.username
+
+        return self.render_to_response(context)
+
 
 class Map(TemplateView):
     template_name = 'animal_shelter/map.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data(**kwargs)
         context['map'] = True
-        return context
+
+        if request.user.is_authenticated:
+            context['username'] = request.user.username
+
+        return self.render_to_response(context)
 
 
 @csrf_exempt
