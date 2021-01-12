@@ -1,8 +1,11 @@
 from django.db import models
 from datetime import datetime
+from authorization.models import User
 
 
 # Create your models here.
+
+
 class Kind(models.Model):
     name = models.CharField(max_length=50, verbose_name="Вид", null=True, blank=True)
 
@@ -20,7 +23,8 @@ class Pet(models.Model):
     receipt_date = models.DateField(auto_now=True, verbose_name="Поступил")
     face = models.ImageField(upload_to='pets_foto', blank=True, verbose_name="Фотография")
     birth_data = models.DateField(blank=True, null=True, verbose_name='Дата рождения')
-
+    added = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='added',
+                              verbose_name='Добавил')
     MALE = 'Мальчик'
     FEMALE = 'Девочка'
     GENDER = [(MALE, "Мальчик"), (FEMALE, "Девочка"), ]

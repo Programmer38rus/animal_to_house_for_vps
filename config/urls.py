@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/push/', views.push, name="push"),
     path('', include('animal_shelter.urls')),
+    path('', include('authorization.urls')),
 ]
