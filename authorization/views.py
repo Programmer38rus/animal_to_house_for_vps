@@ -1,19 +1,10 @@
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from authorization.forms import RegisrationForm, UserProfileForm
-<<<<<<< HEAD
-=======
-from django.contrib.auth.views import LoginView
->>>>>>> origin/Authorization
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import FormView
 from django.contrib import auth
-<<<<<<< HEAD
-=======
-from authorization.models import UserProfile, User
-from authorization.forms import LoginForm
->>>>>>> origin/Authorization
 
 
 # Create your views here.
@@ -72,25 +63,11 @@ def register(request):
 
 def profile(request):
     if request.method == 'POST':
-<<<<<<< HEAD
         form = UserProfileForm(request.POST)
         if form.is_valid():
             instance = form.save(commit=False)
             instance.user = request.user
             instance.save()
-
-=======
-        form = UserProfileForm()
-        print(form)
-        print(form.is_valid())
-        if form.is_valid():
-        # print(form)
-        # print(form.save(commit=False))
-            instance = form.save(commit=False)
-            # print(instance)
-            instance.user = request.user
-            instance.save()
->>>>>>> origin/Authorization
             return HttpResponseRedirect(reverse_lazy('animal_shelter:index'))
         context = {
             'form': UserProfileForm(),
