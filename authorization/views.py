@@ -68,6 +68,7 @@ def profile(request):
             instance = form.save(commit=False)
             instance.user = request.user
             instance.save()
+
             return HttpResponseRedirect(reverse_lazy('animal_shelter:index'))
         context = {
             'form': UserProfileForm(),
