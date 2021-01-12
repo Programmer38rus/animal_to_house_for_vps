@@ -64,6 +64,7 @@ def register(request):
 def profile(request):
     if request.method == 'POST':
         form = UserProfileForm(request.POST)
+
         if form.is_valid():
             instance = form.save(commit=False)
             instance.user = request.user
