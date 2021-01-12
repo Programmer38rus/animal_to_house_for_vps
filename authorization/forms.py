@@ -19,4 +19,9 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = '__all__'
+<<<<<<< HEAD
         exclude = ('user', 'slug')
+=======
+        # fields = ('name',)
+        # exclude = ('user', 'slug')
+>>>>>>> origin/Authorization
